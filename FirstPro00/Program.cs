@@ -7,7 +7,13 @@
             double x1 = 2.7, x2 = 15.8;
             double y1 = x1 + x2;
             Console.WriteLine($"Hello, {y1}");
+
+            // проверка стека
             Console.WriteLine(NumberTranslation.TransNumber((int)y1, 2));
+
+            // проверка очереди
+            int[] ms = {11,3,41,52,63,71,89,10};
+            ReorderingQueue.Reordering(ms);
 
         }
     }
