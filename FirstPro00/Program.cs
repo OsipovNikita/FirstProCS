@@ -15,6 +15,9 @@
             int[] ms = {11,3,41,52,63,71,89,10};
             ReorderingQueue.Reordering(ms);
 
+            // Проверка даты и времени
+            Console.WriteLine(DateTimeDemo.DateTimeNow());
+
         }
     }
 }
