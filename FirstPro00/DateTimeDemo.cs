@@ -29,7 +29,7 @@ namespace FirstPro00
             // Интервал времени
             TimeSpan timeDistance = stop - now;
 
-            return ($"Time distance: {timeDistance.TotalHours} hours, {timeDistance.TotalSeconds} seconds"); 
+            return ($"Time distance: {timeDistance.TotalHours:n} hours, {timeDistance.TotalSeconds:0.#} seconds"); 
         }
     }
 }
