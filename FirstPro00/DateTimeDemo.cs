@@ -18,6 +18,8 @@ namespace FirstPro00
             // Сколько прошло дней от начала года?
             DateTime today = DateTime.Today;
             Console.WriteLine($"Today is {today.DayOfYear} day of year");
+            // Какой сегодня день недели?
+            Console.WriteLine($"Today is {today.DayOfWeek} day of week");
 
             // Проверка на високосность года
             Console.WriteLine($"Is Leap ? {DateTime.IsLeapYear(now.Year)}");
