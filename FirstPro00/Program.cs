@@ -1,9 +1,14 @@
-﻿namespace FirstPro00
+﻿using System.Text;
+
+namespace FirstPro00
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.UTF8;
+
             double x1 = 2.7, x2 = 15.8;
             double y1 = x1 + x2;
             Console.WriteLine($"Hello, {y1}");
