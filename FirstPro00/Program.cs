@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using FirstPro00.PhoneBook;
+using System.Text;
 
 namespace FirstPro00
 {
@@ -23,7 +24,10 @@ namespace FirstPro00
             int[] ms = { 11, 3, 41, 52, 63, 71, 89, 10 };
             ReorderingQueue.Reordering(ms);
 
-            // проверка телефонной книги
+            // проверка телефонной книгн на списке
+            TestPhoneBookList();
+
+            // проверка телефонной книги на словаре
             PhoneBook.PhoneBook phoneBook = new PhoneBook.PhoneBook();
             string phone;
             string str;
@@ -96,5 +100,61 @@ namespace FirstPro00
             }
             return k;
         }
+
+
+        static void TestPhoneBookList()
+        {
+            Console.WriteLine("Hello from the Console PhoneBook app");
+            Console.WriteLine("Select operation");
+            Console.WriteLine("1 Add contact");
+            Console.WriteLine("2 Display contact by number");
+            Console.WriteLine("3 View all contacts");
+            Console.WriteLine("4 Search for contacts for a given name");
+            Console.WriteLine("Press 'x' to exit");
+            var userInput = Console.ReadLine();
+
+            var phoneBook = new PhoneBook.PhoneBookList();
+
+            while (true)
+            {
+                switch (userInput)
+                {
+                    case "1":
+                        Console.WriteLine("Contact name:");
+                        var name = Console.ReadLine();
+
+                        Console.WriteLine("Contact number:");
+                        var number = Console.ReadLine();
+
+                        var newContact = new Contact(name, number);
+                        phoneBook.AddContact(newContact);
+                        break;
+
+                    case "2":
+                        Console.WriteLine("Contact number to search");
+                        var searchNumber = Console.ReadLine();
+                        phoneBook.DisplayContact(searchNumber);
+                        break;
+                    case "3":
+                        phoneBook.DisplayAllContact();
+                        break;
+                    case "4":
+                        Console.WriteLine("Name search phrase");
+                        var searchPhrase = Console.ReadLine();
+
+                        phoneBook.DisplayMatchingContacts(searchPhrase);
+                        break;
+                    case "x":
+                        return;
+                    default:
+                        Console.WriteLine("Select valid operation");
+                        break;
+                }
+
+                Console.WriteLine("Select operation");
+                userInput = Console.ReadLine();
+            }
+        
     }
+}
 }

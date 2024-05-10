@@ -18,7 +18,7 @@ namespace FirstPro00.PhoneBook
 
         // получение строкового представления контакта
         public override string ToString() => 
-            $"Имя абонета: {Name},\nНомер абонента: {Number}\n";
+            $"\nИмя абонета: {Name},\nНомер абонента: {Number}\n";
 
     }
 }
